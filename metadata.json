@@ -1,0 +1,6 @@
+{
+  "name": "GEZ — Geospatial Economic Zoning",
+  "description": "Geospatial intelligence platform for Kenya (Kisumu County) to identify emerging economic clusters, simulate rezoning scenarios, and optimize infrastructure and investment decisions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

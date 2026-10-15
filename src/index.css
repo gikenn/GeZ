@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --parchment: #f4f0e8;
+  --paper: #faf8f3;
+  --ink: #172a30;
+  --ink-soft: #375158;
+  --blue: #1e6d83;
+  --blue-light: #d9ebed;
+  --sage: #71866b;
+  --sage-light: #e1e8da;
+  --orange: #e7783c;
+  --orange-light: #f5d8c8;
+  --line: #d9d5cc;
+  --muted: #7b8581;
+  --radius: 0.35rem;
+  --background: #f4f0e8;
+  --foreground: #172a30;
+  --card: #faf8f3;
+  --card-foreground: #172a30;
+  --primary: #1e6d83;
+  --primary-foreground: #faf8f3;
+  --border: #d9d5cc;
+  --ring: #e7783c;
+}
+
+@layer base {
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Segoe UI, system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Reference site wrap container */
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Tactile Parchment Paper Texture */
+.bg-parchment {
+  background-color: var(--parchment);
+}
+
+.bg-paper {
+  background-color: var(--paper);
+}
+
+.border-line {
+  border-color: var(--line);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.text-ink-soft {
+  color: var(--ink-soft);
+}
+
+/* Reference score ring */
+.score-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--orange) var(--score, 0deg), var(--line) 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-ring-inner {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status indicator dot */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  display: inline-block;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
+/* Subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8c2b5;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a9a396;
+}
+
+/* Print optimizations for PDF export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
